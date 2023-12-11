@@ -200,6 +200,8 @@ INSERT INTO Member_Health_Stat (member_id, height, weight, heart_rate, blood_pre
 
 INSERT INTO Event_Participant (event_id, member_id) VALUES
 (1, 1),
+(1, 2),
+(1, 3),
 (2, 2),
 (3, 3),
 (4, 4),

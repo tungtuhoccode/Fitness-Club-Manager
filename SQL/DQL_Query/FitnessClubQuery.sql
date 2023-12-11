@@ -40,7 +40,6 @@ FROM Personal_Training_Session p
 JOIN Member m ON p.member_id = m.member_id
 JOIN Trainer t ON p.trainer_id = t.trainer_id;
 
-
 -- Retrieve all Personal Training Sessions and the Exercises included in each session
 SELECT
     pts.session_id,
@@ -48,9 +47,11 @@ SELECT
     pts.date,
     e.name,
     e.duration_in_seconds,
-    e.calories_burned
+	en.calories_burned,
+	en.purpose
 FROM Personal_Training_Session pts
-LEFT JOIN Exercise e ON pts.session_id = e.session_id;
+LEFT JOIN Exercise e ON pts.session_id = e.session_id
+LEFT JOIN Exercise_Name en ON e.name = en.name;
 
 -- Retrieve all classes along with the assigned trainer's information
 SELECT 
@@ -69,7 +70,7 @@ SELECT
     e.condition,
     e.cost,
     r.name AS room_name,
-    r.maxCapacity,
+    r.maxCapacity
 FROM Equipment e
 LEFT JOIN Room r ON e.room_id = r.room_id;
 
@@ -77,8 +78,8 @@ LEFT JOIN Room r ON e.room_id = r.room_id;
 SELECT
     ev.event_id,
     ev.description,
-    ev.member_id
-FROM Event ev
+    ep.member_id
+FROM Club_Event ev
 LEFT JOIN Event_Participant ep ON ev.event_id = ep.event_id;
 
 -- Get the phone numbers of all app users
@@ -86,7 +87,7 @@ SELECT
     a.first_name,
     a.last_name,
     u.phone_number
-FROM App_User
+FROM App_User a
 JOIN User_Phone u ON a.user_id = u.user_id;
 
 -- Count the number of members subscribed to each subscription plan
@@ -107,24 +108,22 @@ GROUP BY t.trainer_id;
 
 -- Select all members who have not participated in any event
 SELECT 
-    m.member_id,
-    m.goal
-FROM Member
+    m.member_id
+FROM Member m
 LEFT JOIN Event_Participant e ON m.member_id = e.member_id
 WHERE e.event_id IS NULL;
 
 -- Retrieve the latest health statistics for each member
 SELECT
-    member_id, 
-    MAX(timestamp) AS Lastest_Health_Stat
+    member_id,
+    MAX(timestamp) AS Lastest_Time
 FROM Member_Health_Stat
 GROUP BY member_id;
 
 -- Find the total revenue generated from the subscription plans
 SELECT
     SUM(t.amount) AS Total_Revenue
-FROM Transaction t
-JOIN Subscription_Plan s ON t.subscription_id = s.subscription_id;
+FROM Member_Transaction t
 
 -- List all exercise names along with their calories burned and purpose
 SELECT
