@@ -3,7 +3,7 @@ Members:
 - Bao Le (101241935)
 - Truc Le 
 
-BONUS FEATURE: Include a database 
+BONUS FEATURE: Include a database iajsidjoajsidjo
 Folder: 
 - Application: Include all source code for the application 
     + DDL_Query: This stores all query that is used to create tables. 
