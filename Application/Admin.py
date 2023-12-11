@@ -87,8 +87,8 @@ def createClubEvent():
         conn = ConnectDB.connect_db()
         with conn.cursor() as cur:
             event_description = input("Enter event description: ")
-            event_start_date = input("Enter event date (YYYY-MM-DD): ")
-            event_end_date = input("Enter event date (YYYY-MM-DD): ")
+            event_start_date = input("Enter event start date (YYYY-MM-DD): ")
+            event_end_date = input("Enter event end date (YYYY-MM-DD): ")
 
             cur.execute(sql.SQL(query), (event_start_date, event_end_date, event_description))
             conn.commit()

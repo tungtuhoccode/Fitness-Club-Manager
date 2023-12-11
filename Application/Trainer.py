@@ -3,7 +3,7 @@ from psycopg2 import sql
 import ConnectDB
 
 def getDateTimeforPT():
-    query = "SELECT date + start_time AS session_timestamp FROM Personal_Training_Session"
+    query = "SELECT date, start_time FROM Personal_Training_Session"
     try:
         conn = ConnectDB.connect_db()
         with conn.cursor() as cur:

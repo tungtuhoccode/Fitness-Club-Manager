@@ -2,9 +2,9 @@ import psycopg2
 from psycopg2 import sql
 # Database connection parameters
 db_params = {
-    "dbname": "FitnessClubTest",
-    "user": "tung",
-    "password": "postgres",
+    "dbname": "fitnessclubtest",
+    "user": "postgres",
+    "password": "admin123456",
     "host": "localhost",
     "port": 5432
 }
