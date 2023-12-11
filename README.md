@@ -1,7 +1,7 @@
 Members: 
 - Tung Tran (101274157)
 - Bao Le (101241935)
-- Truc Le 
+- Truc Le (101179999)
 
 
 Setup Instructions
