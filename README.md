@@ -3,6 +3,7 @@ Members:
 - Bao Le (101241935)
 - Truc Le (101179999)
 
+Youtube link for video demo: https://youtu.be/gdu_bgqH8ok
 
 Setup Instructions
 
@@ -52,8 +53,6 @@ Folder:
     + DQL_Query: This stores all query that is used to query the database.
 - SQL folder: Includes all SQL command file
 - DB_Schema folder: Includes 2NF and 3NF database schema
-- ER_Diagram folder: Includes ER diagram
+- ER_Diagram folder: Includes ER diagram.
 
-The project report is submitted through Brightspace
-
-Youtube link for video demo: https://youtu.be/gdu_bgqH8ok
+The project report is submitted through Brightspace.
