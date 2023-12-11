@@ -47,8 +47,7 @@ SELECT
     pts.start_time,
     pts.date,
     e.name,
-    e.description,
-    e.duration,
+    e.duration_in_seconds,
     e.calories_burned
 FROM Personal_Training_Session pts
 LEFT JOIN Exercise e ON pts.session_id = e.session_id;
